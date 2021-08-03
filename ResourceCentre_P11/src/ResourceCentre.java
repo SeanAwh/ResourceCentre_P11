@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class ResourceCentre {
 	// Testing teammates pull-----------------------------
-	// test
+	// test 123
 	public static void main(String[] args) {
 
 		ArrayList<Camcorder> ccList = new ArrayList<Camcorder>();
