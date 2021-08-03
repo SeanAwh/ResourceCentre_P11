@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class ResourceCentre {
-	// Testing teammates pull-----------------------------
+	// Testing teammates pull 2.0
 	// test 123
 	public static void main(String[] args) {
 
