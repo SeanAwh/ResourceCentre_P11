@@ -1,10 +1,15 @@
 import java.util.ArrayList;
 
 public class ResourceCentre {
-	// Testing teammates pull 2.0
-	// test 123
+	/**
+	 * 
+	 */
+	// refactor extract constant : 5 -> "OPTION_QUIT"
+	private static final int OPTION_QUIT = 5; 
 	public static void main(String[] args) {
 
+		// refactor rename variable : camcorderList -> "ccList"
+		// refactor rename variable : chromebookList -> "cbList"
 		ArrayList<Camcorder> ccList = new ArrayList<Camcorder>();
 		ArrayList<Chromebook> cbList = new ArrayList<Chromebook>();
 
@@ -15,7 +20,7 @@ public class ResourceCentre {
 
 		int option = 0;
 
-		while (option != 5) {
+		while (option != OPTION_QUIT) {
 
 			ResourceCentre.menu();
 			option = Helper.readInt("Enter an option > ");
@@ -85,7 +90,7 @@ public class ResourceCentre {
 					System.out.println("Invalid type");
 				}
 
-			} else if (option == 5) {
+			} else if (option == OPTION_QUIT) {
 				System.out.println("Bye!");
 			} else {
 				System.out.println("Invalid option");
@@ -205,6 +210,7 @@ public class ResourceCentre {
 		
 		boolean isLoaned = false;
 
+		// refactor extract method: isLoaned -> isCCLoaned
 		return isCCLoaned(camcorderList, tag, dueDate, isLoaned);
 	}
 
@@ -251,6 +257,19 @@ public class ResourceCentre {
 		// write your code here
 		boolean isLoaned = false;
 
+		// refactor extract method: isLoaned -> isCBLoaned
+		return isCBLoaned(chromebookList, tag, dueDate, isLoaned);
+	}
+
+	/**
+	 * @param chromebookList
+	 * @param tag
+	 * @param dueDate
+	 * @param isLoaned
+	 * @return
+	 */
+	private static boolean isCBLoaned(ArrayList<Chromebook> chromebookList, String tag, String dueDate,
+			boolean isLoaned) {
 		for (int i = 0; i < chromebookList.size(); i++) {
 			String assetTag = chromebookList.get(i).getAssetTag();
 			
@@ -285,6 +304,18 @@ public class ResourceCentre {
 	public static boolean doReturnCamcorder(ArrayList<Camcorder> camcorderList,String tag) {
 		boolean isReturned = false;
 
+		// refactor extract method: isReturned -> isCCReturned
+		return isCCReturned(camcorderList, tag, isReturned);
+		
+	}
+
+	/**
+	 * @param camcorderList
+	 * @param tag
+	 * @param isReturned
+	 * @return
+	 */
+	private static boolean isCCReturned(ArrayList<Camcorder> camcorderList, String tag, boolean isReturned) {
 		for (int i = 0; i < camcorderList.size(); i++) {
 			if (tag.equalsIgnoreCase(camcorderList.get(i).getAssetTag())
 					&& camcorderList.get(i).getIsAvailable() == false) {
@@ -295,7 +326,6 @@ public class ResourceCentre {
 			}
 		}
 		return isReturned;
-		
 	}
 
 	public static void returnCamcorder(ArrayList<Camcorder> camcorderList) {
@@ -313,6 +343,18 @@ public class ResourceCentre {
 	public static boolean doReturnChromebook(ArrayList<Chromebook> chromebookList,String tag) {
 		boolean isReturned = false;
 
+		// refactor extract method: isReturned -> isCBReturned
+		return isCBReturned(chromebookList, tag, isReturned);
+		
+	}
+
+	/**
+	 * @param chromebookList
+	 * @param tag
+	 * @param isReturned
+	 * @return
+	 */
+	private static boolean isCBReturned(ArrayList<Chromebook> chromebookList, String tag, boolean isReturned) {
 		for (int i = 0; i < chromebookList.size(); i++) {
 			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
 					&& chromebookList.get(i).getIsAvailable() == false) {
@@ -323,7 +365,6 @@ public class ResourceCentre {
 			}
 		}
 		return isReturned;
-		
 	}
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here
