@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 
 public class ResourceCentre {
-
-
+	// Testing teammates pull-----------------------------
 	public static void main(String[] args) {
 
 		ArrayList<Camcorder> camcorderList = new ArrayList<Camcorder>();
