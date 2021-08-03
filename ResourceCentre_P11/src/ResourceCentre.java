@@ -4,6 +4,7 @@ public class ResourceCentre {
 	/**
 	 * 
 	 */
+	// testing ...
 	// refactor extract constant : 5 -> "OPTION_QUIT"
 	private static final int OPTION_QUIT = 5; 
 	public static void main(String[] args) {
