@@ -204,6 +204,18 @@ public class ResourceCentre {
 		
 		boolean isLoaned = false;
 
+		return isCCLoaned(camcorderList, tag, dueDate, isLoaned);
+	}
+
+	/**
+	 * @param camcorderList
+	 * @param tag
+	 * @param dueDate
+	 * @param isLoaned
+	 * @return
+	 */
+	private static boolean isCCLoaned(ArrayList<Camcorder> camcorderList, String tag, String dueDate,
+			boolean isLoaned) {
 		for (int i = 0; i < camcorderList.size(); i++) {
 			
 			String assetTag = camcorderList.get(i).getAssetTag();
