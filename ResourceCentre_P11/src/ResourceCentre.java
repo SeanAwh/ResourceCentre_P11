@@ -1,12 +1,20 @@
 import java.util.ArrayList;
 
 public class ResourceCentre {
+
 	/**
 	 * 
 	 */
-	// testing ...
+	// testing commit
 	// refactor extract constant : 5 -> "OPTION_QUIT"
 	private static final int OPTION_QUIT = 5; 
+
+	//Testing teammate pull 3.0
+
+
+	// Testing teammates pull 2.0
+	// test 123
+
 	public static void main(String[] args) {
 
 		// refactor rename variable : camcorderList -> "ccList"
